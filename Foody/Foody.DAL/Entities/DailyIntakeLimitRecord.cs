@@ -11,20 +11,15 @@ namespace Foody.DAL.Entities
         [Required]
         public int UserId { get; set; }
 
-        [Required]
-        public double DailyCaloriesIntake { get; set; }
+        public double? DailyCaloriesIntake { get; set; }
 
-        [Required]
-        public double DailyCarbsIntake { get; set; }
+        public double? DailyCarbsIntake { get; set; }
 
-        [Required]
-        public double DailyProteinIntake { get; set; }
+        public double? DailyProteinIntake { get; set; }
 
-        [Required]
-        public double DailyFatIntake { get; set; }
+        public double? DailyFatIntake { get; set; }
 
-        [Required]
-        public double DailyWaterIntake { get; set; }
+        public double? DailyWaterIntake { get; set; }
 
         // Navigation property for the user associated with this goal
         public UserRecord User { get; set; }

@@ -2,11 +2,11 @@
 
 namespace Foody.Web.Controllers
 {
-    public class StatisticsController : Controller
+    public class StatisticsController : ControllerBase
     {
         public IActionResult Index()
         {
-            return View();
+            return Ok();
         }
     }
 }

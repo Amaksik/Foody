@@ -11,9 +11,11 @@ namespace Foody.BLL.Interfaces.DAL
     {
         Task<User> GetUserByIdAsync(int userId);
         Task<User> GetUserByChatIdAsync(string chatId);
+        Task<User> GetFullUserByChatIdAsync(string chatId);
         Task<IEnumerable<User>> GetAllUsersAsync();
         Task AddUserAsync(User user);
         Task UpdateUserAsync(User user);
+        Task UpdateUserConfigurationAsync<T>(string chatId, T config) where T : class;
         Task DeleteUserAsync(int userId);
     }
 }

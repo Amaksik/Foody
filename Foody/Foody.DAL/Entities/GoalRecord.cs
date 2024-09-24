@@ -17,11 +17,9 @@ namespace Foody.DAL.Entities
         [Required]
         public int UserId { get; set; }
 
-        [Required]
-        public double GoalWeightValue { get; set; }
+        public double? GoalWeightValue { get; set; }
 
-        [Required]
-        public double CurrentWeightValue { get; set; }
+        public double? CurrentWeightValue { get; set; }
 
         // Navigation property for the user associated with this goal
         public UserRecord User { get; set; }

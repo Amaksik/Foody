@@ -23,20 +23,19 @@ namespace Foody.DAL.Configurations
                 .ValueGeneratedOnAdd();
 
             builder.Property(x => x.Height)
-                .HasColumnName("height")
-                .IsRequired();
+                .HasColumnName("height");
 
             builder.Property(x => x.Weight)
-                .HasColumnName("weight")
-                .IsRequired();
+                .HasColumnName("weight");
 
             builder.Property(x => x.UserId)
                 .HasColumnName("user_id")
                 .IsRequired();
 
-            builder.HasOne(u => u.User)
-                .WithOne(g => g.CurrentMeasurements)
-                .HasForeignKey<UserRecord>(g => g.UserId);
+            builder.HasOne(e => e.User)
+                .WithOne(e => e.CurrentMeasurements)
+                .HasForeignKey<MeasurementsRecord>(e => e.UserId)
+                .IsRequired();
 
         }
     }

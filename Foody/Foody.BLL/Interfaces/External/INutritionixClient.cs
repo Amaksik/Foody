@@ -1,8 +1,10 @@
-﻿namespace Foody.BLL.Interfaces.External
+﻿using Foody.BLL.Models.DTO;
+
+namespace Foody.BLL.Interfaces.External
 {
     public interface INutritionixClient
     {
-        Task<string> AnalyzeBarcodeAsync(long upc);
-        Task<string> AnalyzeNaturalLanguageAsync(string naturalLanguage);
+        Task<IEnumerable<NutrionixFood>> AnalyzeBarcodeAsync(string upc);
+        Task<IEnumerable<NutrionixFood>> AnalyzeNaturalLanguageAsync(string naturalLanguage);
     }
 }

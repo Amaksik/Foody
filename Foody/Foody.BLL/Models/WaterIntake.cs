@@ -18,7 +18,7 @@ namespace Foody.BLL.Models
         public int UserId { get; set; }
 
         [Required]
-        public int Amount { get; set; }
+        public double Amount { get; set; }
 
         [Required]
         public DateTime DateTime { get; set; }

@@ -19,13 +19,13 @@ namespace Foody.BLL.Models
         public int UserId { get; set; }
 
         [Required]
-        public int Calories { get; set; }
+        public double Calories { get; set; }
 
-        public int? Carbs { get; set; }
+        public double? Carbs { get; set; }
 
-        public int? Fat { get; set; }
+        public double? Fat { get; set; }
 
-        public int? Protein { get; set; }
+        public double? Protein { get; set; }
 
         [Required]
         public DateTime DateTime { get; set; }

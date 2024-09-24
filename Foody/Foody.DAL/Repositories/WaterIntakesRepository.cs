@@ -40,10 +40,11 @@ namespace Foody.DAL.Repositories
 
         public async Task AddWaterIntakeAsync(int userId, WaterIntake waterIntake)
         {
+            var user = _context.Users.First(u => u.UserId == userId);
             var record = _mapper.Map<WaterIntakeRecord>(waterIntake);
-            record.UserId = userId;
-            record.DateTime = DateTime.Now;
+            record.DateTime = DateTime.UtcNow;
 
+            user.WaterIntakes.Add(record);
             _context.WaterIntakes.Add(record);
 
             await _context.SaveChangesAsync();

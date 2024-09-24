@@ -24,8 +24,7 @@ namespace Foody.DAL.Configurations
                 .ValueGeneratedOnAdd();
 
             builder.Property(x => x.GoalWeightValue)
-                .HasColumnName("goal_weight_value")
-                .IsRequired();
+                .HasColumnName("goal_weight_value");
 
             builder.Property(x => x.CurrentWeightValue)
                 .HasColumnName("current_weight_value");
@@ -34,9 +33,10 @@ namespace Foody.DAL.Configurations
                 .HasColumnName("user_id")
                 .IsRequired();
 
-            builder.HasOne(u => u.User)
-                .WithOne(g => g.PersonalGoal)
-                .HasForeignKey<UserRecord>(g => g.UserId);
+            builder.HasOne(e => e.User)
+                .WithOne(e => e.PersonalGoal)
+                .HasForeignKey<GoalRecord>(e => e.UserId)
+                .IsRequired();
 
         }
     }

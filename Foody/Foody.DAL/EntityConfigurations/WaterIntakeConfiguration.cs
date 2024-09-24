@@ -23,7 +23,8 @@ namespace Foody.DAL.Configurations
                 .ValueGeneratedOnAdd();
 
             builder.Property(x => x.Amount)
-                .HasColumnName("amount");
+                .HasColumnName("amount")
+                .IsRequired();
 
             builder.Property(x => x.DateTime)
                 .HasColumnName("date_time")

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Foody.BLL.Models
 {
-    public class MeasurementsRecord
+    public class Measurements
     {
         [Key]
         [Required]

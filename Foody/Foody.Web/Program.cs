@@ -3,6 +3,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Foody.BLL.Services.Clients;
 using Foody.BLL.Interfaces.External;
+using Foody.BLL.Interfaces.DAL;
+using Foody.BLL.Interfaces.Internal;
+using Foody.BLL.Services.Internal;
+using Foody.DAL.Repositories;
 
 namespace Foody.Web
 {
@@ -18,6 +22,8 @@ namespace Foody.Web
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             builder.Services.AddDbContext<FoodyDbContext>((sp, options) =>
             {
@@ -46,6 +52,18 @@ namespace Foody.Web
                 var baseUrl = builder.Configuration.GetSection("Nutritionix")["BaseUrl"];
                 return new NutritionixClient(apiKey, baseUrl, apiId);
             });
+
+            builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+
+            builder.Services.AddScoped<IWaterIntakesRepository, WaterIntakesRepository>();
+
+            builder.Services.AddScoped<IFoodIntakesRepository, FoodIntakesRepository>();
+
+            builder.Services.AddScoped<IUserService, UserService>();
+
+            builder.Services.AddScoped<IWaterIntakeService, WaterIntakeService>();
+
+            builder.Services.AddScoped<IFoodIntakeService, FoodIntakeService>();
 
             var app = builder.Build();
 

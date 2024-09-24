@@ -21,22 +21,18 @@ namespace Foody.DAL.Configurations
             builder.Property(x => x.DailyIntakeLimitId)
                 .HasColumnName("id")
                 .ValueGeneratedOnAdd();
-            
+
             builder.Property(x => x.DailyCaloriesIntake)
-                .HasColumnName("calories")
-                .IsRequired();
+                .HasColumnName("calories");
 
             builder.Property(x => x.DailyCarbsIntake)
-                .HasColumnName("carbs")
-                .IsRequired();
+                .HasColumnName("carbs");
 
             builder.Property(x => x.DailyProteinIntake)
-                .HasColumnName("protein")
-                .IsRequired();
+                .HasColumnName("protein");
 
             builder.Property(x => x.DailyFatIntake)
-                .HasColumnName("fat")
-                .IsRequired();
+                .HasColumnName("fat");
 
             builder.Property(x => x.DailyWaterIntake)
                 .HasColumnName("water");
@@ -45,9 +41,10 @@ namespace Foody.DAL.Configurations
                 .HasColumnName("user_id")
                 .IsRequired();
 
-            builder.HasOne(u => u.User)
-                .WithOne(g => g.DailyLimits)
-                .HasForeignKey<UserRecord>(g => g.UserId);
+            builder.HasOne(e => e.User)
+                .WithOne(e => e.DailyLimits)
+                .HasForeignKey<DailyIntakeLimitRecord>(e => e.UserId)
+                .IsRequired();
 
         }
     }

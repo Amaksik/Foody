@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Foody.BLL.Interfaces.DAL;
+using Foody.BLL.Interfaces.Internal;
+using Foody.BLL.Models;
 
 namespace Foody.BLL.Services.Internal
 {
-    using Foody.BLL.Interfaces.DAL;
-    using Foody.BLL.Interfaces.Internal;
-    using Foody.BLL.Models;
-    using System.Threading.Tasks;
-
     public class WaterIntakeService : IWaterIntakeService
     {
         private readonly IWaterIntakesRepository _waterIntakesRepository;

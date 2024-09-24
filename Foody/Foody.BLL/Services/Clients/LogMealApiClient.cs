@@ -43,7 +43,7 @@ namespace Foody.BLL.Services.Clients
                 var nutritionInfo = JsonSerializer.Deserialize<LogmealRecognitionResponseSimplified>(nutritionalInfoResponse);
 
                 return nutritionalInfoResponse;
-            } 
+            }
             catch (Exception ex)
             {
                 return $"Error: {ex.Message}";

@@ -21,7 +21,7 @@ namespace Foody.DAL.Configurations
             builder.Property(x => x.FoodIntakeId)
                 .HasColumnName("id")
                 .ValueGeneratedOnAdd();
-            
+
             builder.Property(x => x.Calories)
                 .HasColumnName("calories")
                 .IsRequired();

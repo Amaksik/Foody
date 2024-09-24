@@ -1,6 +1,7 @@
 ﻿using Foody.BLL.Interfaces.External;
 using Foody.BLL.Services.Clients;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace Foody.Web.Controllers
 {
@@ -17,7 +18,7 @@ namespace Foody.Web.Controllers
             _nutritionixClient = nutritionixClient;
         }
 
-        [HttpPost ("/image")]
+        [HttpPost("/image")]
         public async Task<IActionResult> RecognizeImage([FromForm] FileUploadViewModel model)
         {
             try
@@ -43,17 +44,17 @@ namespace Foody.Web.Controllers
             }
         }
 
-        [HttpPost("/barcode")]
-        public async Task<IActionResult> RecognizeBarcode([FromBody] long upc)
+        [HttpPost("/barcode/{upc}")]
+        public async Task<IActionResult> RecognizeBarcode(string upc)
         {
             try
             {
-                if (upc == 0)
+                if (string.IsNullOrEmpty(upc))
                 {
                     //"No barcode provided"
                     return new BadRequestResult();
                 }
-                
+
                 var result = await _nutritionixClient.AnalyzeBarcodeAsync(upc);
                 return new OkObjectResult(result);
             }
@@ -75,7 +76,7 @@ namespace Foody.Web.Controllers
                 }
 
                 var result = await _nutritionixClient.AnalyzeNaturalLanguageAsync(language);
-                return new OkObjectResult(result);
+                return new OkObjectResult(JsonSerializer.Serialize(result));
             }
             catch (Exception ex)
             {

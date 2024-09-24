@@ -26,28 +26,17 @@ namespace Foody.Web.Controllers
                     //"No ID provided."
                     return new BadRequestResult();
                 }
-                    var result = await _userService.IsRegistered(chatId);
-                    return new OkObjectResult(result);
+                var exists = await _userService.IsRegistered(chatId);
+                if (!exists)
+                {
+                    return NotFound();
+                }
+                return Ok(exists);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
             }
         }
-
-        [HttpPost]
-        public async Task<IActionResult> RecognizeBarcode([FromBody] long upc)
-        {
-            try
-            {
-                
-                return new OkResult();
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex.Message);
-            }
-        }
-
     }
 }

@@ -23,11 +23,11 @@ namespace Foody.DAL.Repositories
         }
         public async Task AddFoodIntakeAsync(int userId, FoodIntake foodIntake)
         {
+            var user = _context.Users.First(u => u.UserId == userId);
             var record = _mapper.Map<FoodIntakeRecord>(foodIntake);
-            record.UserId = userId;
-            record.DateTime = DateTime.Now;
+            record.DateTime = DateTime.UtcNow;
 
-            _context.FoodIntakes.Add(record);
+            user.FoodIntakes.Add(record);
 
             await _context.SaveChangesAsync();
         }

@@ -19,23 +19,18 @@ namespace Foody.BLL.Models
 
         public string Email { get; set; }
 
-        [Required]
         public string Phone { get; set; }
 
         public string ChatId { get; set; }
 
         public DailyIntakeLimit DailyLimits { get; set; }
 
-        // Navigation property for goal records
         public Goal PersonalGoal { get; set; }
 
-        // Navigation property for measurements records
-        public MeasurementsRecord CurrentMeasurements { get; set; }
+        public Measurements CurrentMeasurements { get; set; }
 
-        // Navigation property for food intake records
         public ICollection<FoodIntake> FoodIntakes { get; set; }
 
-        // Navigation property for water intake records
         public ICollection<WaterIntake> WaterIntakes { get; set; }
     }
 }

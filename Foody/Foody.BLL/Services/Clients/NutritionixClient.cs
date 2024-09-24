@@ -1,4 +1,5 @@
 ﻿using Foody.BLL.Interfaces.External;
+using Foody.BLL.Models.DTO;
 using Foody.BLL.Services.Clients.Models;
 using System;
 using System.Collections.Generic;
@@ -24,36 +25,46 @@ namespace Foody.BLL.Services.Clients
             _client.BaseAddress = new Uri(apiUri);
         }
 
-        public async Task<string> AnalyzeBarcodeAsync(long upc) //upc stand for Universal Product Code
+        public async Task<IEnumerable<NutrionixFood>> AnalyzeBarcodeAsync(string upc) //upc stand for Universal Product Code
         {
+            //016000139626
             try
             {
-                var response = await _client.GetAsync($"/search/item/?upc={upc}");
+                var request = new HttpRequestMessage(HttpMethod.Get, $"https://trackapi.nutritionix.com/v2/search/item/?upc={upc}");
+                var response = await _client.SendAsync(request);
+
                 response.EnsureSuccessStatusCode();
-                return await response.Content.ReadAsStringAsync();
+
+                var content = await response.Content.ReadAsStringAsync();
+                var result = JsonSerializer.Deserialize<NutrionixDTO>(content);
+                return result.foods;
             }
             catch (Exception ex)
             {
-                return $"Error: {ex.Message}";
+                throw new Exception($"Error: {ex.Message}");
             }
         }
-        public async Task<string> AnalyzeNaturalLanguageAsync(string naturalLanguage)
+
+        public async Task<IEnumerable<NutrionixFood>> AnalyzeNaturalLanguageAsync(string naturalLanguage)
         {
             try
             {
-                var query = naturalLanguage;
-                var jsonQuery = JsonSerializer.Serialize(query);
-                var content = new StringContent(jsonQuery, null, "application/json");
+                var queryObject = new { query = naturalLanguage };
+                var requestBody = JsonSerializer.Serialize(queryObject);
+                var content = new StringContent(requestBody, null, "application/json");
 
                 var response = await _client.PostAsync("natural/nutrients", content);
                 response.EnsureSuccessStatusCode();
 
-                return await response.Content.ReadAsStringAsync();
+                var result = JsonSerializer.Deserialize<NutrionixDTO>(await response.Content.ReadAsStringAsync());
+
+                return result.foods;
             }
             catch (Exception ex)
             {
-                return $"Error: {ex.Message}";
+                return null;
             }
         }
+
     }
 }
