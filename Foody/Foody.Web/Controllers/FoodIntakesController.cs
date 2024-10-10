@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Foody.BLL.Interfaces.Internal;
 using Foody.BLL.Models;
-using Foody.Web.Models.Requests;
+using Foody.Web.Models.Requests.Client;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Foody.Web.Controllers

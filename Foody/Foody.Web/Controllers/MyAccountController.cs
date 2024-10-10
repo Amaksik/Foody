@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Foody.BLL.Interfaces.Internal;
 using Foody.BLL.Models;
-using Foody.Web.Models.Requests;
+using Foody.Web.Models.Requests.Client;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
@@ -9,6 +10,7 @@ namespace Foody.Web.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [AllowAnonymous]
     public class MyAccountController : ControllerBase
     {
         private readonly IUserService _userService;

@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foody.BLL", "..\..\..\Desktop\Foody\Foody\Foody.BLL\Foody.BLL.csproj", "{BF223142-2128-4B15-AF0C-598087F56F5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foody.BLL", "Foody.BLL\Foody.BLL.csproj", "{BF223142-2128-4B15-AF0C-598087F56F5E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foody.DAL", "..\..\..\Desktop\Foody\Foody\Foody.DAL\Foody.DAL.csproj", "{2B7F4F71-64D5-4988-A449-07C699179AA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foody.DAL", "Foody.DAL\Foody.DAL.csproj", "{2B7F4F71-64D5-4988-A449-07C699179AA8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foody.Web", "..\..\..\Desktop\Foody\Foody\Foody.Web\Foody.Web.csproj", "{59E53F8B-17D2-486B-B53E-5D190F80AA18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foody.Web", "Foody.Web\Foody.Web.csproj", "{59E53F8B-17D2-486B-B53E-5D190F80AA18}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foody.Domain", "Foody.Domain\Foody.Domain.csproj", "{C1EC5E76-88AD-4F21-A4AF-3AE2BD145398}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foody.IdentityAccessLayer", "Foody.IdentityAccessLayer\Foody.IdentityAccessLayer.csproj", "{1726C6DA-74ED-4E29-99C6-255CD2E44B8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foody.Business.DAL", "Foody.Business.DAL\Foody.Business.DAL.csproj", "{B07156D7-894F-41A3-BCFB-420AC9821718}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{59E53F8B-17D2-486B-B53E-5D190F80AA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59E53F8B-17D2-486B-B53E-5D190F80AA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59E53F8B-17D2-486B-B53E-5D190F80AA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1EC5E76-88AD-4F21-A4AF-3AE2BD145398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1EC5E76-88AD-4F21-A4AF-3AE2BD145398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1EC5E76-88AD-4F21-A4AF-3AE2BD145398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1EC5E76-88AD-4F21-A4AF-3AE2BD145398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1726C6DA-74ED-4E29-99C6-255CD2E44B8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1726C6DA-74ED-4E29-99C6-255CD2E44B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1726C6DA-74ED-4E29-99C6-255CD2E44B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1726C6DA-74ED-4E29-99C6-255CD2E44B8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B07156D7-894F-41A3-BCFB-420AC9821718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07156D7-894F-41A3-BCFB-420AC9821718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07156D7-894F-41A3-BCFB-420AC9821718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07156D7-894F-41A3-BCFB-420AC9821718}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

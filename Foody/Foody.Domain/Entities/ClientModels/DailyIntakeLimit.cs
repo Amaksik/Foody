@@ -1,9 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Foody.Web.Models.Requests
+namespace Foody.Domain.Entities.ClientModels
 {
-    public class DailyIntakeLimitReq
+    public class DailyIntakeLimit
     {
+        [Key]
+        [Required]
+        public int DailyIntakeLimitId { get; set; }
+
+        [Required]
+        public int UserId { get; set; }
+
         [Required]
         public double DailyCaloriesIntake { get; set; }
 

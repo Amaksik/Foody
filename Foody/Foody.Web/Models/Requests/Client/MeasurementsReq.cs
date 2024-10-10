@@ -1,4 +1,4 @@
-﻿namespace Foody.Web.Models.Requests
+﻿namespace Foody.Web.Models.Requests.Client
 {
     public class MeasurementsReq
     {

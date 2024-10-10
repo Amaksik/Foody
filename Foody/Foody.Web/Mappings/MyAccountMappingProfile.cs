@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Foody.BLL.Models;
-using Foody.Web.Models.Requests;
+using Foody.Web.Models.Requests.Client;
 
 namespace Foody.Web.Mappings
 {
