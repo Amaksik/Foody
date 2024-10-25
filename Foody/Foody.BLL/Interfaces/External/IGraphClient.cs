@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Foody.BLL.Interfaces.External
 {
-    internal interface IGraphClient
+    public interface IGraphClient
     {
     }
 }

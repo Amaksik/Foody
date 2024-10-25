@@ -1,5 +1,4 @@
 ﻿using Foody.Domain.Entities;
-using Foody.IdentityAccessLayer.Record;
 using Foody.IdentityAccessLayer.Records;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -26,15 +25,15 @@ namespace Foody.IdentityAccessLayer
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(GetType()));
 
-            modelBuilder.Entity<ApplicationUserRecordApplicationUserRoleRecord>()
-                .HasOne(ur => ur.Role)
-                .WithMany().HasForeignKey(ur => ur.RoleId);
+            //modelBuilder.Entity<ApplicationUserRecordApplicationUserRoleRecord>()
+            //    .HasOne(ur => ur.Role)
+            //    .WithMany().HasForeignKey(ur => ur.RoleId);
 
-            modelBuilder.Entity<ApplicationUserRecord>()
-                .HasMany(e => e.Roles)
-                .WithOne()
-                .HasForeignKey(ur => ur.UserId)
-                .IsRequired();
+            //modelBuilder.Entity<ApplicationUserRecord>()
+            //    .HasMany(e => e.Roles)
+            //    .WithOne()
+            //    .HasForeignKey(ur => ur.UserId)
+            //    .IsRequired();
 
             //modelBuilder.Entity<ApplicationUserRecord>()
             //    .HasOne(e => e.Role)
@@ -43,41 +42,41 @@ namespace Foody.IdentityAccessLayer
             //    .IsRequired();
 
             //one-to-one relation configuration identityUser to domain Entities
-            modelBuilder.Entity<ApplicationUserRecord>()
-               .HasOne(e => e.Client)
-               .WithOne(e => e.User)
-               .HasForeignKey<ClientUserRecord>(e => e.UserId)
-               .IsRequired(false);
+            //modelBuilder.Entity<ApplicationUserRecord>()
+            //   .HasOne(e => e.Client)
+            //   .WithOne(e => e.User)
+            //   .HasForeignKey<ClientUserRecord>(e => e.UserId)
+            //   .IsRequired(false);
 
-            modelBuilder.Entity<ApplicationUserRecord>()
-              .HasOne(e => e.Trainer)
-              .WithOne(e => e.User)
-              .HasForeignKey<TrainerUserRecord>(e => e.UserId)
-              .IsRequired(false);
+            //modelBuilder.Entity<ApplicationUserRecord>()
+            //  .HasOne(e => e.Trainer)
+            //  .WithOne(e => e.User)
+            //  .HasForeignKey<TrainerUserRecord>(e => e.UserId)
+            //  .IsRequired(false);
 
-            modelBuilder.Entity<ApplicationUserRecord>()
-              .HasOne(e => e.Organization)
-              .WithOne(e => e.User)
-              .HasForeignKey<OrganizationUserRecord>(e => e.UserId)
-              .IsRequired(false);
+            //modelBuilder.Entity<ApplicationUserRecord>()
+            //  .HasOne(e => e.Organization)
+            //  .WithOne(e => e.User)
+            //  .HasForeignKey<OrganizationUserRecord>(e => e.UserId)
+            //  .IsRequired(false);
             
             // configuration of the domain entities
-            modelBuilder.Entity<TrainerUserRecord>()
-                .HasMany(x => x.Clients)
-                .WithOne(x => x.Trainer)
-                .HasForeignKey(k => k.TrainerId)
-                .IsRequired(false);
+            //modelBuilder.Entity<TrainerUserRecord>()
+            //    .HasMany(x => x.Clients)
+            //    .WithOne(x => x.Trainer)
+            //    .HasForeignKey(k => k.TrainerId)
+            //    .IsRequired(false);
 
-            modelBuilder.Entity<OrganizationUserRecord>()
-               .HasMany(x => x.Trainers)
-               .WithOne(x => x.Organization)
-               .HasForeignKey(k => k.OrganizationId)
-               .IsRequired(false);
+            //modelBuilder.Entity<OrganizationUserRecord>()
+            //   .HasMany(x => x.Trainers)
+            //   .WithOne(x => x.Organization)
+            //   .HasForeignKey(k => k.OrganizationId)
+            //   .IsRequired(false);
         }
 
-        public DbSet<ClientUserRecord> Clients { get; set; }
-        public DbSet<TrainerUserRecord> Trainers { get; set; }
-        public DbSet<OrganizationUserRecord> Organizations { get; set; }
+        //public DbSet<ClientUserRecord> Clients { get; set; }
+        //public DbSet<TrainerUserRecord> Trainers { get; set; }
+        //public DbSet<OrganizationUserRecord> Organizations { get; set; }
 
     }
 

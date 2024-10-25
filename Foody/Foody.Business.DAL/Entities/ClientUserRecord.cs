@@ -29,25 +29,27 @@ namespace Foody.Business.DAL.Entities
         [ProtectedPersonalData]
         public Gender Gender { get; set; }
 
-        public int? TrainerId { get; set; }
+        //public int? TrainerId { get; set; }
 
-        public TrainerUserRecord Trainer { get; set; }
+        //public TrainerUserRecord Trainer { get; set; }
 
         public string ChatId { get; set; }
 
-        public DailyIntakeLimitRecord DailyLimits { get; set; }
+        //public DailyIntakeLimitRecord DailyLimits { get; set; }
 
-        // Navigation property for goal records
-        public GoalRecord PersonalGoal { get; set; }
+        //// Navigation property for goal records
+        //public GoalRecord PersonalGoal { get; set; }
 
-        // Navigation property for measurements records
-        public MeasurementsRecord CurrentMeasurements { get; set; }
+        //// Navigation property for measurements records
+        //public MeasurementsRecord CurrentMeasurements { get; set; }
 
-        // Navigation property for food intake records
-        public ICollection<FoodIntakeRecord> FoodIntakes { get; set; }
+        //// Navigation property for food intake records
+        //public ICollection<FoodIntakeRecord> FoodIntakes { get; set; }
 
-        // Navigation property for water intake records
-        public ICollection<WaterIntakeRecord> WaterIntakes { get; set; }
+        //// Navigation property for water intake records
+        //public ICollection<WaterIntakeRecord> WaterIntakes { get; set; }
+
+        public ICollection<RequestedTrainingRecord> Trainings { get; set; }
 
     }
 }

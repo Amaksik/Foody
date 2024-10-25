@@ -1,4 +1,4 @@
-﻿using Foody.IdentityAccessLayer.Record;
+﻿using Foody.IdentityAccessLayer.Records;
 using System;
 using System.Collections.Generic;
 using System.Linq;

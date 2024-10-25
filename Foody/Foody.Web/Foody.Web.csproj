@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Foody.BLL\Foody.BLL.csproj" />
+    <ProjectReference Include="..\Foody.Business.DAL\Foody.Business.DAL.csproj" />
     <ProjectReference Include="..\Foody.DAL\Foody.DAL.csproj" />
     <ProjectReference Include="..\Foody.Domain\Foody.Domain.csproj" />
     <ProjectReference Include="..\Foody.IdentityAccessLayer\Foody.IdentityAccessLayer.csproj" />

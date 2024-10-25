@@ -11,12 +11,13 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Foody.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Foody.IdentityAccessLayer;
-using Foody.IdentityAccessLayer.Record;
+using Foody.IdentityAccessLayer.Records;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Components.Sections;
+using Foody.Business.DAL;
 
 namespace Foody.Web
 {
@@ -31,6 +32,10 @@ namespace Foody.Web
             // Add FoodyIdentityContext and configure connection string
             builder.Services.AddDbContext<FoodyIdentityContext>(options =>
                 options.UseNpgsql(builder.Configuration.GetConnectionString("Foody_Database"))); // Use your preferred database
+                                                                                                 // Add FoodyIdentityContext and configure connection string
+            builder.Services.AddDbContext<FityDbContext>(options =>
+                options.UseNpgsql(builder.Configuration.GetConnectionString("Foody_Database"))); // Use your preferred database
+
 
             // Configure Identity services
             builder.Services.AddIdentityCore<ApplicationUserRecord>()

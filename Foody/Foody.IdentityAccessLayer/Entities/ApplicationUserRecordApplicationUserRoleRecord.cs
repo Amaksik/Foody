@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Foody.IdentityAccessLayer.Record
+namespace Foody.IdentityAccessLayer.Records
 {
     public class ApplicationUserRecordApplicationUserRoleRecord : IdentityUserRole<int>
     {

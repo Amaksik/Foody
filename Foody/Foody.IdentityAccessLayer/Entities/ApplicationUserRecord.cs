@@ -2,7 +2,7 @@
 using Foody.IdentityAccessLayer.Records;
 using Microsoft.AspNetCore.Identity;
 
-namespace Foody.IdentityAccessLayer.Record
+namespace Foody.IdentityAccessLayer.Records
 {
     public class ApplicationUserRecord : IdentityUser<int>
     {
@@ -15,8 +15,8 @@ namespace Foody.IdentityAccessLayer.Record
         [ProtectedPersonalData]
         public string FullName { get; set; }
 
-        public ClientUserRecord? Client { get; set; }
-        public TrainerUserRecord? Trainer { get; set; }
-        public OrganizationUserRecord? Organization { get; set; }
+        //public ClientUserRecord? Client { get; set; }
+        //public TrainerUserRecord? Trainer { get; set; }
+        //public OrganizationUserRecord? Organization { get; set; }
     }
 }

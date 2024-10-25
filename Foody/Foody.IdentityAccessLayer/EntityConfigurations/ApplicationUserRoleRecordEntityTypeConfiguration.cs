@@ -1,5 +1,5 @@
 ﻿using Foody.Domain.Entities;
-using Foody.IdentityAccessLayer.Record;
+using Foody.IdentityAccessLayer.Records;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Foody.IdentityAccessLayer.Configuration
+namespace Foody.IdentityAccessLayer.EntityConfigurations
 {
     public class ApplicationUserRoleRecordEntityTypeConfiguration : IEntityTypeConfiguration<ApplicationUserRoleRecord>
     {

@@ -11,7 +11,7 @@ using System.Reflection.Emit;
 
 namespace Foody.DAL.Configurations
 {
-    internal class GoalConfiguration : IEntityTypeConfiguration<GoalRecord>
+    public class GoalConfiguration : IEntityTypeConfiguration<GoalRecord>
     {
         public void Configure(EntityTypeBuilder<GoalRecord> builder)
         {

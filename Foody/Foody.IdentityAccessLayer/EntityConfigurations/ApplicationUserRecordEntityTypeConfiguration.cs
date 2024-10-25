@@ -1,4 +1,4 @@
-﻿using Foody.IdentityAccessLayer.Record;
+﻿using Foody.IdentityAccessLayer.Records;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Foody.IdentityAccessLayer.Configuration
+namespace Foody.IdentityAccessLayer.EntityConfigurations
 {
     public class ApplicationUserRecordEntityTypeConfiguration : IEntityTypeConfiguration<ApplicationUserRecord>
     {

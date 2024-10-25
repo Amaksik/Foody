@@ -1,6 +1,6 @@
 ﻿using Foody.DAL.Entities;
 using Foody.Domain.Entities;
-using Foody.IdentityAccessLayer.Record;
+using Foody.IdentityAccessLayer.Records;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;

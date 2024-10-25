@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Foody.Domain.Entities;
 using Foody.Domain.Interfaces;
-using Foody.IdentityAccessLayer.Record;
+using Foody.IdentityAccessLayer.Records;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Foody.IdentityAccessLayer.Repositories
 {
-    internal class ApplicationUserRepository : IApplicationUserRepository
+    public class ApplicationUserRepository : IApplicationUserRepository
     {
         private readonly IMapper _mapper;
         private readonly FoodyIdentityContext _foodyIdentityContext;

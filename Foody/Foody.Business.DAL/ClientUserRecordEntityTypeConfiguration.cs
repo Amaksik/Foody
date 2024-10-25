@@ -1,5 +1,5 @@
-﻿using Foody.Domain.Entities;
-using Foody.IdentityAccessLayer.Records;
+﻿using Foody.Business.DAL.Entities;
+using Foody.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Foody.IdentityAccessLayer.Configuration
+namespace Foody.Business.DAL
 {
     public class ClientUserRecordEntityTypeConfiguration : IEntityTypeConfiguration<ClientUserRecord>
     {
@@ -27,12 +27,12 @@ namespace Foody.IdentityAccessLayer.Configuration
                    .WithMany() // Assuming no collection navigation property on ApplicationUserRecord
                    .HasForeignKey(cu => cu.UserId);
 
-            // Trainer Relationship
-            builder.Property(cu => cu.TrainerId).HasColumnName("trainer_id");
-            builder.HasOne(cu => cu.Trainer)
-                   .WithMany() // Assuming no collection navigation property on TrainerUserRecord
-                   .HasForeignKey(cu => cu.TrainerId)
-                   .OnDelete(DeleteBehavior.SetNull);
+            //// Trainer Relationship
+            //builder.Property(cu => cu.TrainerId).HasColumnName("trainer_id");
+            //builder.HasOne(cu => cu.Trainer)
+            //       .WithMany() // Assuming no collection navigation property on TrainerUserRecord
+            //       .HasForeignKey(cu => cu.TrainerId)
+            //       .OnDelete(DeleteBehavior.SetNull);
 
             // Protected Personal Data
             builder.Property(cu => cu.FirstName)
